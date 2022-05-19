@@ -1,10 +1,8 @@
 import { execaSync, ExecaSyncReturnValue } from 'execa';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
 // https://blog.logrocket.com/alternatives-dirname-node-js-es-modules/
-const __dirname = fileURLToPath(new URL('.', import.meta.url));
-const TEST_CLI_PATH = path.resolve(__dirname, '../cli.ts');
+const TEST_CLI_PATH = path.resolve(process.cwd(), 'src', 'cli.ts');
 
 type RunOptions = {
   nodeOptions?: string;
